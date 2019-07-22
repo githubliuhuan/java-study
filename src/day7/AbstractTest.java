@@ -48,4 +48,7 @@ class pro extends Employee {
 }
 
 public class AbstractTest {
+    public static void main(String[] args) {
+
+    }
 }
