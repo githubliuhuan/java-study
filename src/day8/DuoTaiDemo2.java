@@ -19,7 +19,7 @@ package day8;
 
 5.多态的应用
 
-
+6.多态的出现代码中的特点（多态使用的注意事项）
 
 动物：
 猫 狗
@@ -93,7 +93,9 @@ public class DuoTaiDemo2 {
     public static void function(Animal2 a)
     {
         a.eat();
-        // Cat2 c = (Cat2)a;
+        // if(a instanceof Cat)
+        // {Cat2 c = (Cat2)a;}
+        // else if(a instanceof Dog) {}
         // c.catchMouse();
     }
 
