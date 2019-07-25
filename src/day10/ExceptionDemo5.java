@@ -1,3 +1,5 @@
+package day10;
+
 class FuShuException extends Exception {
     FuShuException(String msg) {
         super(msg);
