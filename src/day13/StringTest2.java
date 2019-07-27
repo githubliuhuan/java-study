@@ -43,9 +43,9 @@ public class StringTest2 {
     }
 
     public static void main(String[] args) {
-        String str = "abkkcdkkefkk";
+        String str = "kkabkkcdkkefkk";
         sop("count="+getSubCount(str,"kk"));
         sop("count="+getSubCount_2(str,"kk"));
-
+        // sop("count====="+str.split("kk").length); 不建议使用。
     }
 }
