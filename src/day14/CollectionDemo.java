@@ -5,10 +5,30 @@ package day14;
  */
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class CollectionDemo {
     public static void main(String[] args) {
         method_2();
+    }
+
+    public static void method_get()
+    {
+        ArrayList al = new ArrayList();
+        al.add("java01");
+        al.add("java02");
+        al.add("java03");
+        al.add("java04");
+        Iterator it = al.iterator();
+        while(it.hasNext())
+        {
+            sop(it.next());
+        }
+
+        for(Iterator itt = al.iterator();it.hasNext();)
+        {
+            sop(itt.next());
+        }
     }
 
     public static void method_2()
