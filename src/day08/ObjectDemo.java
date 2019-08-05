@@ -1,4 +1,4 @@
-package day8;
+package day08;
 
 /*
 object：是所有对象的直接或者间接父类，传说中的上帝。

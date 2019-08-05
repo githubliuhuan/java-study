@@ -1,4 +1,4 @@
-package day7;
+package day07;
 
 /*
 当多个类中出现相同功能，但是功能主体不同，

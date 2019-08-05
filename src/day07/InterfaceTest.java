@@ -1,4 +1,4 @@
-package day7;
+package day07;
 /*
 继承：is a
 接口：like a

@@ -1,4 +1,4 @@
-package day8;
+package day08;
 /*
 基础班学生：
     学习，睡觉

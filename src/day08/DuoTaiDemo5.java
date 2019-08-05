@@ -1,4 +1,4 @@
-package day8;
+package day08;
 /*
 需求：
 电脑运行实例。

@@ -1,4 +1,4 @@
-package day7;
+package day07;
 
 /*
 需求：获取一段程序运行的时间

@@ -1,4 +1,4 @@
-package day7;
+package day07;
 /*
 final：最终，作为一个修饰符。
 1.可以修饰类，函数，变量。
