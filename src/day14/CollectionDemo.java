@@ -1,91 +1,144 @@
-package day14;
+import java.util.*;
+
 /*
-1.addæ–¹æ³•çš„å‚æ•°ç±»å‹æ˜¯Objectã€‚ä»¥ä¾¿äºæ¥æ”¶ä»»æ„ç±»å‹å¯¹è±¡
-2.é›†åˆä¸­å­˜å‚¨çš„éƒ½æ˜¯å¯¹è±¡çš„å¼•ç”¨ï¼ˆåœ°å€ï¼‰
- */
+Collection¶¨ÒåÁË¼¯ºÏ¿ò¼ÜµÄ¹²ĞÔ¹¦ÄÜ¡£
+1£¬Ìí¼Ó
+	add(e);
+	addAll(collection);
 
-import java.util.ArrayList;
-import java.util.Iterator;
+2£¬É¾³ı
+	remove(e);
+	removeAll(collection);
+	clear();
 
-public class CollectionDemo {
-    public static void main(String[] args) {
-        method_2();
-    }
+3£¬ÅĞ¶Ï¡£
+	contains(e);
+	isEmpty();
 
-    public static void method_get()
-    {
-        ArrayList al = new ArrayList();
-        al.add("java01");
-        al.add("java02");
-        al.add("java03");
-        al.add("java04");
-        Iterator it = al.iterator();
-        while(it.hasNext())
-        {
-            sop(it.next());
-        }
+4£¬»ñÈ¡
+	iterator();
+	size();
 
-        for(Iterator itt = al.iterator();it.hasNext();)
-        {
-            sop(itt.next());
-        }
-    }
+5£¬»ñÈ¡½»¼¯¡£
+	retainAll();
 
-    public static void method_2()
-    {
-        ArrayList al1 = new ArrayList();
-
-        al1.add("java01");
-        al1.add("java02");
-        al1.add("java03");
-        al1.add("java04");
-        ArrayList al2 = new ArrayList();
-
-        al2.add("java01");
-        al2.add("java02");
-        al2.add("java03");
-        al2.add("java04");
-
-        // å–äº¤é›†
-        al1.retainAll(al2);
-        sop("al1:"+al1);
-        sop("al2:"+al2);
-
-        // å¹²æ‰ç›¸åŒå…ƒç´ 
-        al1.removeAll(al2);
-    }
+6£¬¼¯ºÏ±äÊı×é¡£
+	toArray();
 
 
-    public static void base_method()
-        {
-            ArrayList al = new ArrayList();
 
-            // 1.æ·»åŠ å…ƒç´ 
-            al.add("java01");
-            al.add("java02");
-            al.add("java03");
-            al.add("java04");
-            // 2.è·å–ä¸ªæ•°ï¼Œé›†åˆé•¿åº¦
-            sop("size:"+al.size());
-            // 3.æ‰“å°åŸé›†åˆ
-            sop("åŸé›†åˆï¼š"+al);
+1£¬add·½·¨µÄ²ÎÊıÀàĞÍÊÇObject¡£ÒÔ±ãÓÚ½ÓÊÕÈÎÒâÀàĞÍ¶ÔÏó¡£
 
-            // 4.åˆ é™¤å…ƒç´ 
-            al.remove("java02");
-
-            // 5.åˆ¤æ–­å…ƒç´ 
-            sop("java03æ˜¯å¦å­˜åœ¨ï¼š"+al.contains("java03"));
-
-            // 6.æ¸…ç©ºé›†åˆ
-            al.clear();
-
-            // 7.é›†åˆæ˜¯å¦ä¸ºç©º
-            sop("é›†åˆæ˜¯å¦ä¸ºç©ºï¼š"+al.isEmpty());
-        }
+2£¬¼¯ºÏÖĞ´æ´¢µÄ¶¼ÊÇ¶ÔÏóµÄÒıÓÃ(µØÖ·)
 
 
-    public static void sop(Object obj)
-    {
-        System.out.println(obj);
-    }
+Ê²Ã´ÊÇµü´úÆ÷ÄØ£¿
+ÆäÊµ¾ÍÊÇ¼¯ºÏµÄÈ¡³öÔªËØµÄ·½Ê½¡£
+ÈçÍ¬×¥ÍŞÍŞÓÎÏ·»úÖĞµÄ¼Ğ×Ó¡£
+
+µü´úÆ÷ÊÇÈ¡³ö·½Ê½£¬»áÖ±½Ó·ÃÎÊ¼¯ºÏÖĞµÄÔªËØ¡£
+ËùÒÔ½«µü´úÆ÷Í¨¹ıÄÚ²¿ÀàµÄĞÎÊ½À´½øĞĞÃèÊö¡£
+Í¨¹ıÈİÆ÷µÄiterator()·½·¨»ñÈ¡¸ÃÄÚ²¿ÀàµÄ¶ÔÏó¡£
+
+
+
+
+*/
+class  CollectionDemo
+{
+	public static void main(String[] args) 
+	{
+		
+		method_get();
+	}
+	public static void method_get()
+	{
+		ArrayList al = new ArrayList();
+
+		//1£¬Ìí¼ÓÔªËØ¡£
+		al.add("java01");//add(Object obj);
+		al.add("java02");
+		al.add("java03");
+		al.add("java04");
+
+		/*
+		Iterator it = al.iterator();//»ñÈ¡µü´úÆ÷£¬ÓÃÓÚÈ¡³ö¼¯ºÏÖĞµÄÔªËØ¡£
+
+		while(it.hasNext())
+		{
+			sop(it.next());
+		}
+		*/
+
+		for(Iterator it = al.iterator(); it.hasNext() ; )
+		{
+			sop(it.next());
+		}
+	}
+
+
+	public static void method_2()
+	{
+		ArrayList al1 = new ArrayList();
+
+		al1.add("java01");
+		al1.add("java02");
+		al1.add("java03");
+		al1.add("java04");
+		ArrayList al2 = new ArrayList();
+
+		al2.add("java03");
+		al2.add("java04");
+		al2.add("java05");
+		al2.add("java06");
+
+		
+		//al1.retainAll(al2);//È¥½»¼¯£¬al1ÖĞÖ»»á±£ÁôºÍal2ÖĞÏàÍ¬µÄÔªËØ¡£
+		al1.removeAll(al2);
+
+		sop("al1:"+al1);
+		sop("al2:"+al2);
+
+
+
+
+	}
+
+	public static void base_method()
+	{
+		//´´½¨Ò»¸ö¼¯ºÏÈİÆ÷¡£Ê¹ÓÃCollection½Ó¿ÚµÄ×ÓÀà¡£ArrayList
+		ArrayList al = new ArrayList();
+
+		//1£¬Ìí¼ÓÔªËØ¡£
+		al.add("java01");//add(Object obj);
+		al.add("java02");
+		al.add("java03");
+		al.add("java04");
+
+		//´òÓ¡Ô­¼¯ºÏ¡£
+		sop("Ô­¼¯ºÏ:"+al);
+
+
+		//3£¬É¾³ıÔªËØ¡£
+		//al.remove("java02");
+		//al.clear();//Çå¿Õ¼¯ºÏ¡£
+
+
+		//4£¬ÅĞ¶ÏÔªËØ¡£
+		sop("java03ÊÇ·ñ´æÔÚ:"+al.contains("java03"));
+		sop("¼¯ºÏÊÇ·ñÎª¿Õ£¿"+al.isEmpty());
+
+
+		//2£¬»ñÈ¡¸öÊı¡£¼¯ºÏ³¤¶È¡£
+		sop("size:"+al.size());
+
+		//´òÓ¡¸Ä±äºóµÄ¼¯ºÏ¡£
+		sop(al);
+
+	}
+
+	public static void sop(Object obj)
+	{
+		System.out.println(obj);
+	}
 }
