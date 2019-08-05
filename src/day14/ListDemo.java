@@ -37,7 +37,7 @@ List集合特有的迭代器。ListIterator是Iterator的子接口。
 在迭代时，不可以通过集合对象的方法操作集合中的元素。
 因为会发生ConcurrentModificationException异常。
 
-所以，在迭代器时，只能用迭代器的放过操作元素，可是Iterator方法是有限的，
+所以，在迭代器时，只能用迭代器的方法操作元素，可是Iterator方法是有限的，
 只能对元素进行判断，取出，删除的操作，
 如果想要其他的操作如添加，修改等，就需要使用其子接口，ListIterator。
 
