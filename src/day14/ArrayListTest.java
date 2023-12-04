@@ -8,6 +8,7 @@ import java.util.*;
 class ArrayListTest 
 {
 
+
 	public static void sop(Object obj)
 	{
 		System.out.println(obj);
